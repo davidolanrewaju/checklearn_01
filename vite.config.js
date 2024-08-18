@@ -13,7 +13,6 @@ export default defineConfig({
       '/api': {
         target: 'https://job-board-be-jdnd.onrender.com/api/v1/',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       }
     }
   },
