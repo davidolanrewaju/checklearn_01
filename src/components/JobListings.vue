@@ -20,7 +20,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get('/api/jobs')
+    const response = await axios.get('https://job-board-be-jdnd.onrender.com/api/v1/jobs')
     state.jobs = response.data
   } catch (error) {
     console.error('Error fetching data: ' + error)

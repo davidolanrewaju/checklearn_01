@@ -44,7 +44,7 @@ const handleSubmit = async () => {
   };
 
   try {
-    const response = await axios.put(`/api/jobs/${jobId}`, updateJob);
+    const response = await axios.put(`https://job-board-be-jdnd.onrender.com/api/v1/jobs/${jobId}`, updateJob);
     toast.success('Job Updated successfully');
     router.push(`/jobs/${response.data.id}`);
   } catch (error) {
@@ -55,7 +55,7 @@ const handleSubmit = async () => {
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`/api/jobs/${jobId}`);
+    const response = await axios.get(`https://job-board-be-jdnd.onrender.com/api/v1/jobs/${jobId}`);
     state.job = response.data;
     form.title = state.job.title
     form.type = state.job.type

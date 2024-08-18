@@ -8,14 +8,6 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://job-board-be-jdnd.onrender.com/api/v1/',
-        changeOrigin: true,
-      }
-    }
-  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

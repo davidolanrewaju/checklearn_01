@@ -18,7 +18,7 @@ const state = reactive({
 
 onMounted(async () => {
   try {
-    const response = await axios.get(`/api/jobs/${jobId}`);
+    const response = await axios.get(`https://job-board-be-jdnd.onrender.com/api/v1/jobs/${jobId}`);
     state.job = response.data;
   } catch (error) {
     console.error('Error fetching data: ' + error);
@@ -32,7 +32,7 @@ const deleteJob = async () => {
     const confirm = window.confirm('Are you sure you want to delete this job');
 
     if (confirm) {
-      await axios.delete(`/api/jobs/${jobId}`);
+      await axios.delete(`https://job-board-be-jdnd.onrender.com/api/v1/jobs/${jobId}`);
       toast.success('Job deleted successfully');
       router.push('/jobs');
     }

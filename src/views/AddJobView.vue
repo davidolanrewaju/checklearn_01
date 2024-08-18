@@ -35,7 +35,7 @@ const handleSubmit = async () => {
   };
 
   try {
-    const response = await axios.post(`/api/jobs`, newJob);
+    const response = await axios.post(`https://job-board-be-jdnd.onrender.com/api/v1/jobs`, newJob);
     toast.success('Job added successfully');
     router.push(`/jobs/${response.data.id}`);
   } catch (error) {
